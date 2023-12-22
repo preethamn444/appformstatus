@@ -1,0 +1,72 @@
+openapi: 3.0.1
+info:
+  title: App Form Status
+  description: APIs for App Form Status
+  version: 1.0.0
+paths:
+  /appFormStatus:
+    post:
+      tags:
+        - App Form Status
+      summary:  Create a new appFormStatus
+      operationId: create appFormStatus List
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/creategetappFormStatusrequestBody'
+      responses:
+        '200':
+          description: Create a new appFormStatus
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/creategetappFormStatusresponse'
+
+
+components:
+  schemas:
+    getappFormStatusresponse:
+      type: object
+      properties:
+        applicationFormStatusId: 
+          type: string
+        appFormStatus:
+          type: string
+        caseId_Value:
+          type: number
+        caseStatus: 
+          type: string
+        progress:
+          type: string
+        
+    creategetappFormStatusrequestBody:
+      type: object
+      properties: 
+        caseId: 
+          type: string
+        appFormtatus:
+          type: string
+        progress:
+          type: string
+    creategetappFormStatusresponse:  
+      type: object
+      properties:
+        applicationFormStatusId:
+          type: string
+    
+    UpdateappFormStatusresponse:  
+      type: object
+      properties:
+        applicationFormStatusId:
+          type: string
+          
+          
+    UpdateAppFormStatusrequestbody:  
+      type: object
+      properties:
+        Progress:
+          type: string
